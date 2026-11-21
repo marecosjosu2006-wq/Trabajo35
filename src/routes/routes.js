@@ -1,7 +1,12 @@
+import { Router } from 'express';
+import productRoutes from './producto.routes.js';
 import userRoutes from './user.routes.js';
 
-const allRoutes = (app) => {
-  app.use('/users', userRoutes);
-};
+const allRoutes = Router();
+
+allRoutes.use("/products", productRoutes);
+
+allRoutes.use("/users", userRoutes);
+
 
 export default allRoutes;   

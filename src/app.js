@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Server is running' });
 });
 
-allRoutes(app);
+app.use(allRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Route not found' });
